@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+    id 'idea'
+    id 'io.freefair.lombok' version "${freefair_lombok_version}"
+    id 'org.springframework.boot' version "${springboot_version}"
+    id 'io.spring.dependency-management' version "${springboot_dependency_version}"
+}
+
+description = 'hb-trip-export-test'
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+
+    implementation "${lib.'mysql-connector-j'}"
+    implementation "${lib.'mybatis-plus-boot3-starter'}"
+    implementation "${lib.'mybatis-puls-generator'}"
+    implementation "${lib.'freemarker'}"
+
+
+    // https://mvnrepository.com/artifact/com.github.jsonzou/jmockdata
+    testImplementation group: 'com.github.jsonzou', name: 'jmockdata', version: '4.3.0'
+
+}
+

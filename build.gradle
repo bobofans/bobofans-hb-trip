@@ -1,0 +1,70 @@
+description = "Hb Trip Project Build"
+
+defaultTasks 'clean', 'build'
+
+allprojects {
+    group APP_GROUP
+    version APP_VERSION
+
+
+    repositories {
+        mavenLocal()
+        maven {
+            name "Alibaba"
+            allowInsecureProtocol = true
+            url "http://maven.aliyun.com/nexus/content/groups/public/"
+        }
+        mavenCentral()
+    }
+}
+
+ext {
+    configuration = [
+            java_version = JavaVersion.VERSION_17
+    ]
+
+    libraries = [
+            spring_version = "6.1.12",
+            springboot_version = "3.3.3",
+            springboot_dependency_version = "1.1.6",
+            freefair_lombok_version = "8.10",
+            lombok_version = "1.18.34",
+            mysql_connector_version = "8.3.0",
+            mybatis_plus_version = "3.5.7",
+            freemarker_version = "2.3.33",
+    ]
+
+    lib = [
+            "lombok"                    : "org.projectlombok:lombok:${lombok_version}",
+            "spring-context-support"    : "org.springframework:spring-context-support:${spring_version}",
+            "spring-jdbc"               : "org.springframework:spring-jdbc:${spring_version}",
+            "spring-tx"                 : "org.springframework:spring-tx:${spring_version}",
+            "spring-web"                : "org.springframework:spring-web:${spring_version}",
+            "spring-aop"                : "org.springframework:spring-aop:${spring_version}",
+            "mysql-connector-j"         : "com.mysql:mysql-connector-j:${mysql_connector_version}",
+            "mybatis-plus-boot3-starter": "com.baomidou:mybatis-plus-spring-boot3-starter:${mybatis_plus_version}",
+            "mybatis-puls-generator"    : "com.baomidou:mybatis-plus-generator:${mybatis_plus_version}",
+            "freemarker"                : "org.freemarker:freemarker:${freemarker_version}",
+    ]
+}
+
+subprojects {
+    apply plugin: 'java-library'
+
+    sourceCompatibility = "${java_version}"
+    targetCompatibility = "${java_version}"
+
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
+        options.warnings = false
+        options.deprecation = true
+        options.compilerArgs += ["-parameters"]
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+}
+
+
+
