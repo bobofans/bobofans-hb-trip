@@ -1,7 +1,9 @@
 rootProject.name = 'hbtrip-trip-build'
 
+include "hb-trip-project:hb-trip-common:hb-trip-common-core"
+include "hb-trip-project:hb-trip-common:hb-trip-common-ip"
+include "hb-trip-project:hb-trip-common:hb-trip-common-page"
 
-include "hb-trip-project:hb-trip-common"
 include "hb-trip-project:hb-trip-dependencies"
 include "hb-trip-project:hb-trip-parent"
 

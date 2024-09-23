@@ -32,6 +32,6 @@ public class MyMetaObjectHandler implements MetaObjectHandler {
     @Override
     public void updateFill(MetaObject metaObject) {
         log.info("start update fill....");
-        this.strictUpdateFill(metaObject, "gmtModify", LocalDateTime.class, LocalDateTime.now());
+        this.strictUpdateFill(metaObject, "gmt_modify", LocalDateTime.class, LocalDateTime.now());
     }
 }

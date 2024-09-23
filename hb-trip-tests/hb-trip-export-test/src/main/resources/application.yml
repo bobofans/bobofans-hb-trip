@@ -11,3 +11,12 @@ mybatis-plus:
   check-config-location: true
   mapper-locations: classpath*:/mysql/mapper/*.xml
   type-aliases-package: com.bobofans.business.trip.*.entity
+
+decorator:
+  datasource:
+    p6spy:
+      # 日志格式
+      log-format: "\ntime:%(executionTime) || sql:%(sql)\n"
+      # 自定义日志类
+      logging: custom
+      custom-appender-class: com.bobofans.business.trip.common.mybatis.StdLog4jLogger
