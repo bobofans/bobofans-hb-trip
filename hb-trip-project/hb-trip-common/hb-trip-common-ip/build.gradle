@@ -3,7 +3,7 @@ plugins {
     alias(libs.plugins.freefair.lombok)
 }
 
-description = 'hb-trip-common-ip'
+description = 'hb-trip-common-ip：基于 ip2region 实现的IP地址库的工具模块'
 
 dependencies {
     api project(':hb-trip-project:hb-trip-common:hb-trip-common-core')
@@ -16,7 +16,5 @@ dependencies {
     testImplementation libs.bundles.log4j
 
     testRuntimeOnly libs.bundles.slf4j
-
     testRuntimeOnly libs.hutool.core
-
 }

@@ -16,6 +16,8 @@ junit-platform = "1.11.0"
 jupiter = "5.10.3"
 p6spy = "1.9.2"
 jmockdata = "4.3.0"
+jackson = "2.17.2"
+jakarta-validation="3.1.0"
 
 [libraries]
 
@@ -42,6 +44,7 @@ freemarker = { group = "org.freemarker", name = "freemarker", version.ref = "fre
 # https://mvnrepository.com/artifact/cn.hutool
 hutool-core = { group = "cn.hutool", name = "hutool-core", version.ref = "hutool" }
 hutool-crypto = { group = "cn.hutool", name = "hutool-crypto", version.ref = "hutool" }
+hutool-json = { group = "cn.hutool", name = "hutool-json", version.ref = "hutool" }
 
 # https://mvnrepository.com/artifact/com.google.guava
 google-guava = { group = "com.google.guava", name = "guava", version.ref = "guava" }
@@ -72,11 +75,24 @@ log4j-core = { group = "org.apache.logging.log4j", name = "log4j-core", version.
 log4j-api = { group = "org.apache.logging.log4j", name = "log4j-api", version.ref = "log4j" }
 log4j-slf4j-impl = { group = "org.apache.logging.log4j", name = "log4j-slf4j-impl", version.ref = "log4j" }
 
+# https://mvnrepository.com/artifact/com.fasterxml.jackson.core
+jackson-databind = { group = "com.fasterxml.jackson.core", name = "jackson-databind", version.ref = "jackson" }
+jason-daatype-jsr310 = { group = "com.fasterxml.jackson.datatype", name = "jackson-datatype-jsr310", version.ref = "jackson" }
+jackson-core = { group = "com.fasterxml.jackson.core", name = "jackson-core", version.ref = "jackson" }
+jackson-annotations = { group = "com.fasterxml.jackson.core", name = "jackson-annotations", version.ref = "jackson" }
+
+# https://mvnrepository.com/artifact/jakarta.validation
+jakarta-validation = { group = "jakarta.validation", name = "jakarta.validation-api", version.ref = "jakarta-validation" }
+jakarta-annotation = { group = "jakarta.annotation", name = "jakarta.annotation-api", version.ref = "jakarta-validation" }
+
 [bundles]
-hutool = ["hutool-core", "hutool-crypto"]
+spring = ["spring-context-support"]
+hutool = ["hutool-core", "hutool-crypto", "hutool-json"]
 junit-jupiter = ["junit-jupiter-api", "junit-jupiter-engine", "junit-jupiter-params"]
 log4j = ["log4j-api", "log4j-core", "log4j-slf4j-impl"]
 slf4j = ["slf4j-api", "slf4j-reload4j"]
+jackson = ["jackson-databind", "jason-daatype-jsr310"]
+jakarta=["jakarta-validation", "jakarta-annotation"]
 
 [plugins]
 freefair-lombok = { id = "io.freefair.lombok", version.ref = "freefair-lombok" }

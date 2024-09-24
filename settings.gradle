@@ -2,9 +2,10 @@ rootProject.name = 'hbtrip-trip-build'
 
 include "hb-trip-project:hb-trip-common:hb-trip-common-core"
 include "hb-trip-project:hb-trip-common:hb-trip-common-ip"
-include "hb-trip-project:hb-trip-common:hb-trip-common-page"
 
-include "hb-trip-project:hb-trip-dependencies"
-include "hb-trip-project:hb-trip-parent"
+include "hb-trip-project:hb-trip-module-system:hb-trip-module-system-api"
+include "hb-trip-project:hb-trip-module-system:hb-trip-module-system-biz"
+
+include "hb-trip-project:hb-trip-server"
 
 include "hb-trip-tests:hb-trip-export-test"

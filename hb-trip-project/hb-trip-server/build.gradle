@@ -1,0 +1,11 @@
+plugins {
+    id 'java-library'
+    alias(libs.plugins.springboot.dependencies)
+    alias(libs.plugins.springboot)
+}
+
+description = 'hb-trip-server:后端 Server 的主项目'
+
+dependencies {
+    api project(':hb-trip-project:hb-trip-module-system:hb-trip-module-system-biz')
+}

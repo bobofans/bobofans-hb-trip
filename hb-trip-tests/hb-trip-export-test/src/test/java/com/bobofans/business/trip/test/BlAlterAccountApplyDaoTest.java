@@ -50,5 +50,6 @@ public class BlAlterAccountApplyDaoTest {
 
         long count =blAlterAccountApplyDao.count();
         log.info("count:{}",count);
+
     }
 }
