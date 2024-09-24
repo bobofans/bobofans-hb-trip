@@ -23,7 +23,6 @@ import java.util.function.Consumer;
 
 /**
  * <p>Map 工具类</p>
- *
  * @author shencb
  * @version 1.0.0  2024/9/23 shencb $
  */

@@ -9,6 +9,7 @@ package com.bobofans.business.trip.framework.ip.utils;
 
 import com.bobofans.business.trip.framework.ip.entity.Area;
 
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.lionsoul.ip2region.xdb.Searcher;
 
@@ -21,6 +22,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
  * @author shencb
  * @version 1.0.0  2024/9/23 shencb $
  */
+@Slf4j
 public class IPUtilsTest {
 
     @Test
@@ -28,6 +30,7 @@ public class IPUtilsTest {
         // 120.202.4.0|120.202.4.255|420600
         Integer areaId = IPUtils.getAreaId("120.202.4.50");
         assertEquals(420600, areaId);
+        log.info("areaId:{}", areaId);
     }
 
     @Test

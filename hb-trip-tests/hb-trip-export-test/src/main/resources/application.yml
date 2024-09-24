@@ -7,6 +7,11 @@ spring:
     username: cprs_broker
     password: cprs_broker
 
+logging:
+  log4j2:
+    config:
+      override: classpath:log4j2.xml
+
 mybatis-plus:
   check-config-location: true
   mapper-locations: classpath*:/mysql/mapper/*.xml

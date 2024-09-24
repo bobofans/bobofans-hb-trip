@@ -1,6 +1,4 @@
 plugins {
     id 'java-library'
-    id 'idea'
-    id 'io.freefair.lombok' version "${freefair_lombok_version}"
 }
 description = 'hb-trip-common-page'

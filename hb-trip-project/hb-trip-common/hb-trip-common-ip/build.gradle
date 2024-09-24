@@ -1,28 +1,22 @@
 plugins {
     id 'java-library'
-    id 'idea'
-    id 'io.freefair.lombok' version "${freefair_lombok_version}"
+    alias(libs.plugins.freefair.lombok)
 }
+
 description = 'hb-trip-common-ip'
 
 dependencies {
     api project(':hb-trip-project:hb-trip-common:hb-trip-common-core')
+    compileOnly libs.hutool.core
+    compileOnly libs.slf4j.api
 
-    // https://mvnrepository.com/artifact/org.lionsoul/ip2region
-    implementation group: 'org.lionsoul', name: 'ip2region', version: '2.7.0'
+    implementation libs.lionsoul.ip2region
 
-    // https://mvnrepository.com/artifact/cn.hutool/hutool-core
-    implementation group: 'cn.hutool', name: 'hutool-core', version: '5.8.32'
+    testImplementation libs.bundles.junit.jupiter
+    testImplementation libs.bundles.log4j
 
-    // https://mvnrepository.com/artifact/org.slf4j/slf4j-api
-    implementation group:'org.slf4j', name:'slf4j-api',version:'2.0.16'
+    testRuntimeOnly libs.bundles.slf4j
 
-    // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api
-    testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.10.3'
-    testRuntimeOnly('org.junit.jupiter:junit-jupiter-engine:5.10.3')
+    testRuntimeOnly libs.hutool.core
 
-}
-
-test {
-    useJUnitPlatform()
 }

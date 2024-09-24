@@ -1,16 +1,11 @@
 plugins {
     id 'java-library'
-    id 'idea'
-    id 'io.freefair.lombok' version "${freefair_lombok_version}"
+    alias(libs.plugins.freefair.lombok)
 }
+
 description = 'hb-trip-common-core'
 
-
 dependencies {
-    // https://mvnrepository.com/artifact/cn.hutool/hutool-core
-    implementation group: 'cn.hutool', name: 'hutool-core', version: '5.8.32'
-
-    // https://mvnrepository.com/artifact/com.google.guava/guava
-    implementation group: 'com.google.guava', name: 'guava', version: '33.3.0-jre'
-
+    compileOnly libs.hutool.core
+    compileOnly libs.google.guava
 }

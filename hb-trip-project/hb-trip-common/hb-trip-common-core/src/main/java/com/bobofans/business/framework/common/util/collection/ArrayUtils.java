@@ -20,7 +20,6 @@ import static com.bobofans.business.framework.common.util.collection.CollectionU
 
 /**
  * <p>Array 工具类</p>
- *
  * @author shencb
  * @version 1.0.0  2024/9/23 shencb $
  */

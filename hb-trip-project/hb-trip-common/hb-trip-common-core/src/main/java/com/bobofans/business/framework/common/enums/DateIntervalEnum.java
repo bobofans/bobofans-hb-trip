@@ -15,7 +15,7 @@ import lombok.Getter;
 import java.util.Arrays;
 
 /**
- * <p></p>
+ * <p>时间间隔的枚举</p>
  *
  * @author shencb
  * @version 1.0.0  2024/9/23 shencb $

@@ -14,8 +14,7 @@ import lombok.NoArgsConstructor;
 import java.io.Serializable;
 
 /**
- * <p></p>
- *
+ * <p>Key Value 的键值对</p>
  * @author shencb
  * @version 1.0.0  2024/9/23 shencb $
  */
