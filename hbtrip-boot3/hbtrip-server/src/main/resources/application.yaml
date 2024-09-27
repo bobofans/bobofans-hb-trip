@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: hb-trip-server
+
+  profiles:
+    active: dev
+
+logging:
+  log4j2:
+    config:
+      override: classpath:log4j2-spring.xml
+
+mybatis-plus:
+  check-config-location: true
+  type-aliases-package: com.bobofans.business.trip.*.entity
+

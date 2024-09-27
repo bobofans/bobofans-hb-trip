@@ -1,0 +1,11 @@
+plugins {
+    id 'java-library'
+    alias(libs.plugins.freefair.lombok)
+}
+
+description = 'hbtrip-module-codegen-api:codegen api 模块，代码生成开放服务模块'
+
+dependencies {
+    api project(':hbtrip-boot3:hbtrip-common:hbtrip-common-mybatis')
+    api libs.mybatis.puls.generator
+}

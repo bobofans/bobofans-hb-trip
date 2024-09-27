@@ -1,0 +1,39 @@
+plugins {
+    id 'java'
+    id 'idea'
+}
+
+group = APP_GROUP
+version = APP_VERSION
+
+repositories {
+    mavenLocal()
+    maven {
+        name "Alibaba"
+        allowInsecureProtocol = true
+        url "http://maven.aliyun.com/nexus/content/groups/public/"
+    }
+    mavenCentral()
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+    options.warnings = false
+    options.deprecation = true
+    options.compilerArgs += ["-parameters"]
+}
+
+test {
+    useJUnitPlatform()
+}
+
+dependencies {
+    testImplementation libs.bundles.junit.jupiter
+    testImplementation libs.bundles.logback
+    testRuntimeOnly libs.bundles.logback
+    testRuntimeOnly libs.hutool.core
+}
+
+configurations {
+    defaultTasks("clean","build")
+}

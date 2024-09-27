@@ -1,0 +1,13 @@
+plugins {
+    id 'java-library'
+    alias(libs.plugins.freefair.lombok)
+}
+
+description = 'hb-trip-module-system-api:system 模块 API'
+
+dependencies {
+    api project(':hbtrip-boot3:hbtrip-common:hbtrip-common-core')
+
+    implementation libs.jakarta.validation
+    implementation libs.bundles.hutool
+}

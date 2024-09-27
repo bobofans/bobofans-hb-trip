@@ -1,0 +1,20 @@
+plugins {
+    id 'java-library'
+    alias(libs.plugins.freefair.lombok)
+}
+
+description = 'hbtrip-common-ip：基于 ip2region 实现的IP地址库的工具模块'
+
+dependencies {
+    api project(':hbtrip-boot3:hbtrip-common:hbtrip-common-core')
+    compileOnly libs.hutool.core
+    compileOnly libs.slf4j.api
+
+    api libs.lionsoul.ip2region
+
+    testImplementation libs.bundles.junit.jupiter
+    testImplementation libs.bundles.log4j
+
+    testRuntimeOnly libs.bundles.slf4j
+    testRuntimeOnly libs.hutool.core
+}

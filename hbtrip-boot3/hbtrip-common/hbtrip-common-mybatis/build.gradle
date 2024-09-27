@@ -1,0 +1,27 @@
+plugins {
+    id 'java-library'
+    alias(libs.plugins.freefair.lombok)
+}
+
+description = 'hb-trip-common-mybatis：基于 Mybatis plus 实现的增强工具模块'
+
+dependencies {
+    api project(':hbtrip-boot3:hbtrip-common:hbtrip-common-core')
+
+    api libs.jakarta.validation
+    api libs.bundles.hutool
+    api libs.bundles.jackson
+
+    api libs.bundles.spring
+    api libs.mybatis.plus.boot3.starter
+    api libs.mybatis.plus.join.starter
+    api libs.swagger.annotations
+    api libs.bundles.easy.trans
+    api libs.druid.spring.boot.starter
+
+
+    testImplementation libs.bundles.junit.jupiter
+    testImplementation libs.bundles.log4j
+    testRuntimeOnly libs.bundles.slf4j
+    testRuntimeOnly libs.hutool.core
+}

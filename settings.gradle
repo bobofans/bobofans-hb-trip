@@ -1,11 +1,21 @@
-rootProject.name = 'hbtrip-trip-build'
+pluginManagement {
+    includeBuild('build-logic')
+}
 
-include "hb-trip-project:hb-trip-common:hb-trip-common-core"
-include "hb-trip-project:hb-trip-common:hb-trip-common-ip"
+rootProject.name = 'hbtrip-boot3'
 
-include "hb-trip-project:hb-trip-module-system:hb-trip-module-system-api"
-include "hb-trip-project:hb-trip-module-system:hb-trip-module-system-biz"
+include "hbtrip-boot3:hbtrip-common:hbtrip-common-core"
+include "hbtrip-boot3:hbtrip-common:hbtrip-common-ip"
+include "hbtrip-boot3:hbtrip-common:hbtrip-common-mybatis"
 
-include "hb-trip-project:hb-trip-server"
+include "hbtrip-boot3:hbtrip-module-codegen:hbtrip-module-codegen-api"
+include "hbtrip-boot3:hbtrip-module-codegen:hbtrip-module-codegen-biz"
 
-include "hb-trip-tests:hb-trip-export-test"
+include "hbtrip-boot3:hbtrip-module-system:hbtrip-module-system-api"
+include "hbtrip-boot3:hbtrip-module-system:hbtrip-module-system-biz"
+
+//include "hbtrip-boot3:hbtrip-module-test:hbtrip-module-codegen-test"
+//include "hbtrip-boot3:hbtrip-module-test:hbtrip-module-system-test"
+
+include "hbtrip-boot3:hbtrip-server"
+

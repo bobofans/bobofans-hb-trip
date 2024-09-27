@@ -6,18 +6,27 @@ freefair-lombok = "8.10"
 lombok = "1.18.34"
 mysql-connector = "8.3.0"
 mybatis-plus = "3.5.7"
+mybatis-plus-join = "1.4.10"
+mybatis-plus-dynamic="4.3.0"
 freemarker = "2.3.33"
 hutool = "5.8.32"
 guava = "32.1.2-jre"
 ip2region = "2.7.0"
 slf4j = "2.0.16"
 log4j = "2.24.0"
+logback="1.5.8"
 junit-platform = "1.11.0"
 jupiter = "5.10.3"
 p6spy = "1.9.2"
 jmockdata = "4.3.0"
 jackson = "2.17.2"
 jakarta-validation="3.1.0"
+jakarta-annotation="3.0.0"
+swagger = "2.2.23"
+easy-trans="3.0.6"
+mapstruct="1.5.5.Final"
+druid="1.2.21"
+velocity = "2.3"
 
 [libraries]
 
@@ -34,9 +43,14 @@ spring-boot-starter-test = { group = "org.springframework.boot", name = "spring-
 # https://mvnrepository.com/artifact/mysql/mysql-connector-java
 mysql-connector-j = { group = "com.mysql", name = "mysql-connector-j", version.ref = "mysql-connector" }
 
+# https://mvnrepository.com/artifact/io.swagger.core.v3
+swagger-annotations = { group = "io.swagger.core.v3", name = "swagger-annotations", version.ref = "swagger" }
+
 # https://mvnrepository.com/artifact/com.baomidou
 mybatis-plus-boot3-starter = { module = "com.baomidou:mybatis-plus-spring-boot3-starter", version.ref = "mybatis-plus" }
 mybatis-puls-generator = { module = "com.baomidou:mybatis-plus-generator", version.ref = "mybatis-plus" }
+mybatis-plus-join-starter = { group = "com.github.yulichang", name = "mybatis-plus-join-boot-starter", version.ref = "mybatis-plus-join" }
+mybatis-plus-dynamic-datasource-spring3-starter = { group = "com.baomidou", name = "dynamic-datasource-spring-boot3-starter", version.ref = "mybatis-plus-dynamic" }
 
 # https://mvnrepository.com/artifact/org.freemarker
 freemarker = { group = "org.freemarker", name = "freemarker", version.ref = "freemarker" }
@@ -45,6 +59,8 @@ freemarker = { group = "org.freemarker", name = "freemarker", version.ref = "fre
 hutool-core = { group = "cn.hutool", name = "hutool-core", version.ref = "hutool" }
 hutool-crypto = { group = "cn.hutool", name = "hutool-crypto", version.ref = "hutool" }
 hutool-json = { group = "cn.hutool", name = "hutool-json", version.ref = "hutool" }
+hutool-extra = { group = "cn.hutool", name = "hutool-extra", version.ref = "hutool" }
+hutool-system= { group = "cn.hutool", name = "hutool-system", version.ref = "hutool" }
 
 # https://mvnrepository.com/artifact/com.google.guava
 google-guava = { group = "com.google.guava", name = "guava", version.ref = "guava" }
@@ -55,6 +71,10 @@ lionsoul-ip2region = { group = "org.lionsoul", name = "ip2region", version.ref =
 # https://mvnrepository.com/artifact/org.slf4j
 slf4j-api = { group = "org.slf4j", name = "slf4j-api", version.ref = "slf4j" }
 slf4j-reload4j = { group = "org.slf4j", name = "slf4j-reload4j", version.ref = "slf4j" }
+
+# https://mvnrepository.com/artifact/ch.qos.logback
+logback-classic = { group = "ch.qos.logback", name = "logback-classic", version.ref = "logback" }
+logback-core = { group = "ch.qos.logback", name = "logback-core", version.ref = "logback" }
 
 # https://mvnrepository.com/artifact/com.github.gavlyukovskiy
 gavlyukovskiy-p6spy = { group = "com.github.gavlyukovskiy", name = "p6spy-spring-boot-starter", version.ref = "p6spy" }
@@ -83,16 +103,32 @@ jackson-annotations = { group = "com.fasterxml.jackson.core", name = "jackson-an
 
 # https://mvnrepository.com/artifact/jakarta.validation
 jakarta-validation = { group = "jakarta.validation", name = "jakarta.validation-api", version.ref = "jakarta-validation" }
-jakarta-annotation = { group = "jakarta.annotation", name = "jakarta.annotation-api", version.ref = "jakarta-validation" }
+
+# https://mvnrepository.com/artifact/jakarta.annotation
+jakarta-annotation = { group = "jakarta.annotation", name = "jakarta.annotation-api", version.ref = "jakarta-annotation" }
+
+# https://mvnrepository.com/artifact/com.fhs-opensource
+easy-trans-starter = { group = "com.fhs-opensource", name = "easy-trans-spring-boot-starter", version.ref = "easy-trans" }
+easy-trans-mybatis = { group = "com.fhs-opensource", name = "easy-trans-mybatis-plus-extend", version.ref = "easy-trans" }
+
+# https://mvnrepository.com/artifact/org.mapstruct
+mapstruct = { group = "org.mapstruct", name = "mapstruct", version.ref = "mapstruct" }
+
+# https://mvnrepository.com/artifact/com.alibaba/druid-spring-boot-starter
+druid-spring-boot-starter = { group = "com.alibaba", name = "druid-spring-boot-starter", version.ref = "druid" }
+
+# https://mvnrepository.com/artifact/org.apache.velocity
+velocity = { group = "org.apache.velocity", name = "velocity-engine-core", version.ref = "velocity" }
 
 [bundles]
 spring = ["spring-context-support"]
-hutool = ["hutool-core", "hutool-crypto", "hutool-json"]
+hutool = ["hutool-core", "hutool-crypto", "hutool-json","hutool-extra", "hutool-system"]
 junit-jupiter = ["junit-jupiter-api", "junit-jupiter-engine", "junit-jupiter-params"]
 log4j = ["log4j-api", "log4j-core", "log4j-slf4j-impl"]
+logback = ["logback-classic", "logback-core"]
 slf4j = ["slf4j-api", "slf4j-reload4j"]
 jackson = ["jackson-databind", "jason-daatype-jsr310"]
-jakarta=["jakarta-validation", "jakarta-annotation"]
+easy-trans = ["easy-trans-starter", "easy-trans-mybatis"]
 
 [plugins]
 freefair-lombok = { id = "io.freefair.lombok", version.ref = "freefair-lombok" }

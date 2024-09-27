@@ -1,0 +1,14 @@
+plugins {
+    id 'java-library'
+    alias(libs.plugins.freefair.lombok)
+}
+
+description = 'hbtrip-module-codegen-biz:codegen 模块，代码生成模块'
+
+dependencies {
+    api project(':hbtrip-boot3:hbtrip-module-codegen:hbtrip-module-codegen-api')
+    api project(':hbtrip-boot3:hbtrip-common:hbtrip-common-mybatis')
+    implementation libs.mapstruct
+    implementation libs.mybatis.plus.dynamic.datasource.spring3.starter
+    implementation libs.velocity
+}

@@ -1,0 +1,15 @@
+plugins {
+    id 'java-library'
+    id 'buildlogic.java-conventions'
+    alias(libs.plugins.freefair.lombok)
+}
+
+description = 'hbtrip-common-core:系统基础相关工具模块'
+
+dependencies {
+    api libs.slf4j.api
+    api libs.bundles.hutool
+    api libs.google.guava
+    api libs.bundles.jackson
+    api libs.jakarta.validation
+}
