@@ -1,5 +1,6 @@
 plugins {
     id 'java-library'
+    id 'buildlogic.java-conventions'
     alias(libs.plugins.freefair.lombok)
 }
 
