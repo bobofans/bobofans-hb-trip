@@ -10,7 +10,7 @@ import jakarta.validation.constraints.NotNull;
 
 import java.util.Collection;
 
-@ConfigurationProperties(prefix = "yshop.codegen")
+@ConfigurationProperties(prefix = "hbtrip.codegen")
 @Validated
 @Data
 public class CodegenProperties {

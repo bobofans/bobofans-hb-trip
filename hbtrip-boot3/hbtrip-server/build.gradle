@@ -9,8 +9,9 @@ description = 'hb-trip-server:后端 Server 的主项目'
 
 dependencies {
 
+    api project(':hbtrip-boot3:hbtrip-module-codegen:hbtrip-module-codegen-biz')
+
     implementation libs.spring.boot.starter
-    implementation libs.spring.boot.starter.log4j2
 
     implementation libs.mysql.connector.j
     implementation libs.mybatis.plus.boot3.starter
