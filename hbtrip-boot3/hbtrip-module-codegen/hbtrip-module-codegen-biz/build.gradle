@@ -11,5 +11,5 @@ dependencies {
     api project(':hbtrip-boot3:hbtrip-common:hbtrip-common-mybatis')
     implementation libs.mapstruct
     implementation libs.mybatis.plus.dynamic.datasource.spring3.starter
-    implementation libs.velocity
+    api libs.velocity
 }

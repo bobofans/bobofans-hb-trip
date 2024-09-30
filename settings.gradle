@@ -14,7 +14,7 @@ include "hbtrip-boot3:hbtrip-module-codegen:hbtrip-module-codegen-biz"
 include "hbtrip-boot3:hbtrip-module-system:hbtrip-module-system-api"
 include "hbtrip-boot3:hbtrip-module-system:hbtrip-module-system-biz"
 
-//include "hbtrip-boot3:hbtrip-module-test:hbtrip-module-codegen-test"
+include "hbtrip-boot3:hbtrip-module-test:hbtrip-module-codegen-test"
 //include "hbtrip-boot3:hbtrip-module-test:hbtrip-module-system-test"
 
 include "hbtrip-boot3:hbtrip-server"

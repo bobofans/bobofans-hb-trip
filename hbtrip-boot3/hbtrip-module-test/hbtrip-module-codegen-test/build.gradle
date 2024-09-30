@@ -8,6 +8,8 @@ plugins {
 description = 'hbtrip-module-codegen-test'
 
 dependencies {
+    implementation project(':hbtrip-boot3:hbtrip-module-codegen:hbtrip-module-codegen-biz')
+
     implementation libs.spring.boot.starter
     implementation libs.spring.boot.starter.log4j2
 
